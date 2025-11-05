@@ -79,28 +79,22 @@ public:
 //***************************************************************
 
 // The core data structure is a dynamic array (std::vector) of Student objects.
-// If a Linked List was required, this vector would be replaced by a custom
-// LinkedList class of Student objects.
+
 
 // --- Sorting Algorithm (e.g., Bubble Sort for simplicity, or Merge/Quick Sort for complexity) ---
-// For a high-performance solution required for a project, a sorting algorithm like
-// Quick Sort or Merge Sort (which std::sort uses) would be appropriate.
-// Here we use a comparison function for the std::sort (QuickSort/IntroSort implementation)
 bool compareStudents(const Student& a, const Student& b) {
     return a.retStudentNo() < b.retStudentNo();
 }
 
 void sort_records(vector<Student>& students) {
-    // ALGORITHM: Uses the highly efficient sort algorithm (typically IntroSort - a hybrid of 
-    // Quick Sort, Heap Sort, and Insertion Sort) provided by the STL.
-    // This fulfills the 'sorting' algorithm requirement for an array (vector).
+    // ALGORITHM: Using std::sort (which implements a variant of Quick Sort/Intro Sort)
     sort(students.begin(), students.end(), compareStudents);
 }
 
 // --- Searching Algorithm: Binary Search ---
 // Binary Search is efficient but requires the data to be sorted first.
 int binary_search_student(const vector<Student>& students, int studentNumber) {
-    // ALGORITHM: Binary Search
+
     int low = 0;
     int high = students.size() - 1;
 
